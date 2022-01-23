@@ -27,6 +27,9 @@ Confidential Computing. We explore trust using different orthogonal ways of cons
 native approaches when they use an underlying TEE technology and 
 identifying where there may be considerations to preserve the value of using a TEE.
 
+### Trust Model Considerations
+
+- [TEE Boundary](./TrustModel_TEEBoundary.md)
 <!--
    Follow on pull requests will list here subsequent sections corresponding to orthogonal ways 
 of considering cloud native approaches
