@@ -58,3 +58,23 @@ pod within the TEE boundary. We expect this document to align the pod and contai
 over time, but we believe that the node approach cannot deliver the required trust for 
 confidential containers without significant changes throughout the stack which are currently 
 beyond the scope of our efforts.
+
+
+## REFACTOR WHAT IS BELOW
+In general, the trust model adopted by any confidential container based solutions can be binarized
+into:
+1) Partially trust the platform owner, operator and privileged components controlled by host
+2) Completely distrust the platform owner, operator and privileged components controlled by host
+
+where 1) means that some components intruded into Trusted Computing Base (TCB) can be 
+unconditionally trusted by the tenant.
+For example, a node based solution is likely to unconditionally trust the guest firmware provided
+by host. On the contrary, a pod based solution is likely to verify the measurement of a
+lightweight guest firmware provided by host during attestation procedure. Another example is, in
+some cases, a tenant would like to trust the secret provisioned to the container through K8s API
+server, and thus the threat vector "control plane attack" is not deemed as a trust boundary
+violation. 2) is the preferred approach providing the protection for the confidential container
+with the highest level of trust. Note: if a tenant fully trusts the platform owner, operator and
+privileged components controlled by host, the Trusted Execution Environment (TEE) boundary will no 
+longer be the trust boundary of
+the confidential container, so in this case there is no need to use confidential computing.
