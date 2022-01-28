@@ -1,4 +1,4 @@
-# Trust Model for Confidential Containers
+# Trust Model Considerations - Trusted Execution Environment Boundary
 
 
 ## Trusted Execution Environment Boundary
